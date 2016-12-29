@@ -9,6 +9,7 @@
  * '-------------------------------------------------------------------*/
 namespace houdunwang\lang;
 
+use houdunwang\config\Config;
 use houdunwang\lang\build\Base;
 
 class Lang {
@@ -17,7 +18,8 @@ class Lang {
 
 	//更改缓存驱动
 	protected function driver() {
-		$this->link = new Base( $this );
+		$this->link = new Base();
+		$this->link->config( Config::set( 'lang' ) );
 
 		return $this;
 	}
@@ -30,12 +32,16 @@ class Lang {
 		return call_user_func_array( [ $this->link, $method ], $params );
 	}
 
-	public static function __callStatic( $name, $arguments ) {
+	public static function single() {
 		static $link;
 		if ( is_null( $link ) ) {
 			$link = new static();
 		}
 
-		return call_user_func_array( [ $link, $name ], $arguments );
+		return $link;
+	}
+
+	public static function __callStatic( $name, $arguments ) {
+		return call_user_func_array( [ static::single(), $name ], $arguments );
 	}
 }

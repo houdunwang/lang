@@ -9,9 +9,9 @@
  * '-------------------------------------------------------------------*/
 namespace houdunwang\lang;
 
-use hdphp\kernel\ServiceProvider;
+use houdunwang\framework\build\Provider;
 
-class LangProvider extends ServiceProvider {
+class LangProvider extends Provider {
 
 	//延迟加载
 	public $defer = true;

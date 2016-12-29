@@ -9,9 +9,9 @@
  * '-------------------------------------------------------------------*/
 namespace houdunwang\lang;
 
-use hdphp\kernel\ServiceFacade;
+use houdunwang\framework\build\Facade;
 
-class LangFacade extends ServiceFacade {
+class LangFacade extends Facade {
 	public static function getFacadeAccessor() {
 		return 'Lang';
 	}

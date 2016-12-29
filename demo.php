@@ -1,8 +1,8 @@
 <?php
 require 'vendor/autoload.php';
-$lang =[
-	'name'=>'后盾人'
+$config = [
+	//语言包
+	'file' => ROOT_PATH . '/system/zh.php',
 ];
-\houdunwang\lang\Lang::make($lang);
-
-echo \houdunwang\lang\Lang::get('name');
+\houdunwang\config\Config::set( 'lang', $config );
+echo \houdunwang\lang\Lang::get( 'name' );
