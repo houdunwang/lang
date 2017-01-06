@@ -17,12 +17,11 @@ class LangProvider extends Provider {
 	public $defer = true;
 
 	public function boot() {
-
 	}
 
 	public function register() {
-		$this->app->single( 'Lang', function ( $app ) {
-			return new Lang( $app );
+		$this->app->single( 'Lang', function (  ) {
+			return new Lang(  );
 		} );
 	}
 }
