@@ -11,31 +11,26 @@
 ```
 composer require houdunwang/lang
 ```
-> HDPHP 框架已经内置此组件，无需要安装
 
 ##操作
 ####配置
 ```
-$config = [
-	//语言包
-	'file' => ROOT_PATH . '/system/zh.php',
-];
-\houdunwang\config\Config::set( 'lang', $config );
-echo \houdunwang\lang\Lang::get( 'name' );
+Config::set( 'lang.lang', 'system/zh.php' );
+echo Lang::get( 'name' );
 ```
 
 ####设置语言包
 除了可以使用配置文件外,也可以使用file() 方法动态设置语言包
 ```
-\houdunwang\lang\Lang::file('zh.php');
+Lang::file('zh.php');
 ```
 
 ####获取语言
 ```
-echo \houdunwang\lang\Lang::get('web');
+echo Lang::get('web');
 ```
 
 ####设置语言
 ```
-echo \houdunwang\lang\Lang::set('name','向军老师');
+echo Lang::set('name','向军老师');
 ```
