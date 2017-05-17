@@ -1,7 +1,6 @@
 {
   "name": "houdunwang/lang",
   "description": "组件提供便捷的多语言支持，程序开发人员只需要配置好语言包即可实现多语言环境构建。 ",
-  "type": "project",
   "keywords": [
     "houdunwang",
     "hdphp",
